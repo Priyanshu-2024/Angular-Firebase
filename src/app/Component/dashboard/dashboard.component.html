@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="header">
+    <h1>CRUD APP</h1>
+    <p>Welcome {{ userEmail }}</p>
+    <button (click)="logoff()" class="btn btn-danger">Logout</button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-dismiss="modal"
+      data-bs-target="#exampleModal"
+    >
+      Add Task
+    </button>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  placeholder="Enter Email"
+                  [(ngModel)]="EmailId"
+                  name="EmailId"
+                  class="form-control"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  placeholder="Task"
+                  [(ngModel)]="TaskName"
+                  name="TaskName"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  placeholder="Description"
+                  [(ngModel)]="Description"
+                  name="Description"
+                  class="form-control"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="addstudent()"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>EmailId</th>
+        <th>TaskName</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentList">
+        <td>{{ student.id }}</td>
+        <td>{{ student.EmailId }}</td>
+        <td>{{ student.TaskName }}</td>
+        <td>{{ student.Description }}</td>
+        <td>
+          <i
+            class="fa-solid fa-trash mx-2"
+            id="Delete"
+            (click)="delete(student)"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

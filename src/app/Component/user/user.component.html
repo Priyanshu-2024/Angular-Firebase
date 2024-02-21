@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Your Tasks</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <button class="btn btn-primary" (click)="logoff()" type="button">
+        Log Out
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="header">
+    <h1>CRUD APP</h1>
+    <p>Welcome {{ userEmail }}</p>
+  </div>
+
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>TaskName</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.TaskName }}</td>
+        <td>{{ task.Description }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

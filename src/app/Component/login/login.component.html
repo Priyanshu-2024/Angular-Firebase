@@ -1,0 +1,59 @@
+<div class="login-background">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-card-header">
+        <h2 class="text-success">Log In</h2>
+      </div>
+      <div class="login-card-body">
+        <form>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              name="email"
+              [(ngModel)]="email"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              [(ngModel)]="password"
+              name="password"
+              placeholder="Password"
+            />
+          </div>
+          <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+              <button
+                type="submit"
+                (click)="login()"
+                class="btn btn-success btn-block"
+              >
+                Log In
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="signup-card-footer text-center">
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-block mt-2"
+            (click)="signInWithGoogle()"
+          >
+            <i class="fab fa-google mr-2"></i> Sign in with Google
+          </button>
+        </div>
+      </div>
+      <div class="login-card-footer">
+        Wanna Fresh Start?
+        <a routerLink="/register" class="text-success">Sign Up</a>
+      </div>
+      <div class="login-card-footer">
+        Forgot Password?
+        <a routerLink="/forgot-password" class="text-success">Reset Password</a>
+      </div>
+    </div>
+  </div>
+</div>

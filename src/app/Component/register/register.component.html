@@ -1,0 +1,55 @@
+<div class="signup-background">
+  <div class="signup-container">
+    <div class="signup-card">
+      <div class="signup-card-header">
+        <h2 class="text-success">Sign Up</h2>
+      </div>
+      <div class="signup-card-body">
+        <form>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              [(ngModel)]="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              name="password"
+              [(ngModel)]="password"
+              class="form-control"
+              placeholder="Password"
+            />
+          </div>
+          <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+              <button
+                type="submit"
+                (click)="register()"
+                class="btn btn-success btn-block"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="signup-card-footer text-center">
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-block"
+            (click)="signInWithGoogle()"
+          >
+            <i class="fab fa-google mr-2"></i> Sign Up with Google
+          </button>
+        </div>
+      </div>
+      <div class="signup-card-footer">
+        Already a part of family?
+        <a routerLink="/login" class="text-success">Sign In</a>
+      </div>
+    </div>
+  </div>
+</div>
